@@ -29,10 +29,10 @@ public class Checkout {
         double shippingFee = 0;
         for (CartItem item : cart.getItems()) {
             if (item.getProduct().getWeight() > 0.0) {
-                shippingFee += item.getQuantity() * (item.getProduct().getWeight());
+                shippingFee += item.getQuantity() * (item.getProduct().getWeight()) / 1000;
             }
         }
-        return shippingFee;
+        return shippingFee * 10;
     }
 
     private double calculateTotalWeight(Cart cart) {
