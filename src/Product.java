@@ -5,13 +5,13 @@ public class Product implements Shippable{
     private double price;
     private int quantity;
     private double weight;
-    private LocalDate productExpireDate;
+    private LocalDate expirationDate;
 
-    public Product(String name, double price, int quantity, LocalDate productExpireDate) {
+    public Product(String name, double price, int quantity, LocalDate expirationDate) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.productExpireDate = productExpireDate;
+        this.expirationDate = expirationDate;
     }
     @Override
     public String getName() {
@@ -38,8 +38,8 @@ public class Product implements Shippable{
         this.quantity = quantity;
     }
 
-    public LocalDate getProductExpireDate() {
-        return productExpireDate;
+    public LocalDate getexpirationDate() {
+        return expirationDate;
     }
 
     @Override
@@ -48,5 +48,9 @@ public class Product implements Shippable{
     }
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public boolean isExpired() {
+        return expirationDate != null && LocalDate.now().isAfter(expirationDate);
     }
 }

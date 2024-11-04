@@ -12,6 +12,9 @@ public class Cart {
         if (quantity > product.getQuantity()) {
             throw new Exception("there is no enough quantity of " + product.getName());
         }
+        if (product.isExpired()){
+            throw new Exception("product is expired");
+        }
         items.add(new CartItem(product, quantity));
     }
 
