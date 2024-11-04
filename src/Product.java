@@ -1,9 +1,10 @@
 import java.time.LocalDate;
 
-public class Product {
+public class Product implements Shippable{
     private String name;
     private double price;
     private int quantity;
+    private double weight;
     private LocalDate productExpireDate;
 
     public Product(String name, double price, int quantity, LocalDate productExpireDate) {
@@ -12,7 +13,7 @@ public class Product {
         this.quantity = quantity;
         this.productExpireDate = productExpireDate;
     }
-
+    @Override
     public String getName() {
         return name;
     }
@@ -35,5 +36,17 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public LocalDate getProductExpireDate() {
+        return productExpireDate;
+    }
+
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 }
