@@ -7,11 +7,12 @@ public class Product implements Shippable{
     private double weight;
     private LocalDate expirationDate;
 
-    public Product(String name, double price, int quantity, LocalDate expirationDate) {
+    public Product(String name, double price, int quantity, LocalDate expirationDate,double weight) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.expirationDate = expirationDate;
+        this.weight = weight;
     }
     @Override
     public String getName() {
