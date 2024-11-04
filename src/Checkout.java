@@ -48,10 +48,10 @@ public class Checkout {
         for (CartItem item : cart.getItems()) {
             Product product = item.getProduct();
             if (product.getWeight() > 0.0) {
-                System.out.println(item.getQuantity() + "x " + product.getName() + "        " + product.getWeight() * item.getQuantity() + "g");
+                System.out.println(item.getQuantity() + "x " + product.getName() + "        " + (product.getWeight() * item.getQuantity()) / 1000 + "g");
             }
         }
-        System.out.printf("Total package weight: %.2f kg%n%n", totalWeight);
+        System.out.printf("Total package weight: %.2f kg%n%n", totalWeight / 1000);
     }
 
     private void printCheckoutReceipt(Cart cart) {
