@@ -4,11 +4,13 @@ public class Product {
     private String name;
     private double price;
     private int quantity;
+    private LocalDate productExpireDate;
 
-    public Product(String name, double price, int quantity) {
+    public Product(String name, double price, int quantity, LocalDate productExpireDate) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.productExpireDate = productExpireDate;
     }
 
     public String getName() {
